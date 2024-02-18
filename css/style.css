@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-/* weight 600 800 */
+
 * {
   box-sizing: border-box;
 }
@@ -141,9 +141,18 @@ header p {
   top: 50%;
   left: 4px;
   transform: translateY(-50%);
+  transition: 0.3s ease;
+  user-select: none;
 }
+
+.activeChecked:after {
+  transform: translate(142%, -50%);
+}
+
 .check {
   opacity: 0;
+  width: 100%;
+  cursor: pointer;
 }
 
 .yearly-precentOff {
@@ -174,6 +183,10 @@ header p {
   font-weight: 800;
   line-height: 14px;
   letter-spacing: 0px;
+}
+
+.discount {
+  display: none;
 }
 
 .cardFooter {
@@ -207,4 +220,92 @@ header p {
   font-weight: 800;
   line-height: 16px;
   padding: 14px 47px;
+}
+
+@media screen and (min-width: 1100px) {
+  header {
+    background-position: top 27px center;
+    margin-bottom: 92px;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    width: auto;
+    font-size: 15px;
+  }
+
+  .interactivePricingCard {
+    width: 540px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+
+  .slide-moneyParent {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    row-gap: 35px;
+  }
+
+  .pageView {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .money {
+    grid-row: unset;
+    margin-top: 0;
+    font-size: 40px;
+  }
+
+  .monthSpan {
+    font-size: 16px;
+  }
+
+  .rangeParent {
+    grid-column: 1/-1;
+  }
+
+  .billingParent {
+    max-width: 308px;
+  }
+
+  .precentOff {
+    width: 80px;
+    height: 19px;
+    column-gap: 3px;
+  }
+
+  .discount {
+    display: inline;
+  }
+
+  .range::-webkit-slider-thumb {
+    cursor: pointer;
+  }
+
+  .range::-webkit-slider-thumb:active {
+    cursor: grab;
+  }
+
+  .switch {
+    cursor: pointer;
+  }
+
+  .trialBtn {
+    cursor: pointer;
+  }
+
+  .cardFooter {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  .cardFooter ul {
+    margin-bottom: 0px;
+    text-align: left;
+  }
 }
