@@ -129,9 +129,10 @@ header p {
   background: rgb(207, 216, 239);
   width: 43px;
   height: 22px;
+  transition: 0.3s ease;
 }
 
-.switch:after {
+.toggle-slider:after {
   content: "";
   position: absolute;
   background: rgb(255, 255, 255);
@@ -145,14 +146,10 @@ header p {
   user-select: none;
 }
 
-.activeChecked:after {
-  transform: translate(142%, -50%);
-}
-
 .check {
   opacity: 0;
-  width: 100%;
   cursor: pointer;
+  width: 100%;
 }
 
 .yearly-precentOff {
@@ -220,6 +217,7 @@ header p {
   font-weight: 800;
   line-height: 16px;
   padding: 14px 47px;
+  border: none;
 }
 
 @media screen and (min-width: 1100px) {
@@ -239,13 +237,14 @@ header p {
   .interactivePricingCard {
     width: 540px;
     margin: 0 auto;
-    padding: 40px 48px;
+    padding: 40px 0;
   }
 
   .slide-moneyParent {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     row-gap: 35px;
+    padding: 0 48px;
   }
 
   .pageView {
@@ -288,12 +287,21 @@ header p {
     cursor: grab;
   }
 
-  .switch {
+  .switch:hover {
+    background: rgb(122, 234, 223);
     cursor: pointer;
+  }
+  .switch input:checked + .toggle-slider:after {
+    transform: translate(150%, -50%);
   }
 
   .trialBtn {
     cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .trialBtn:hover {
+    color: rgb(255, 255, 255);
   }
 
   .cardFooter {
@@ -302,6 +310,7 @@ header p {
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
+    padding: 48px 48px 0 48px;
   }
 
   .cardFooter ul {
