@@ -132,7 +132,7 @@ header p {
   transition: 0.3s ease;
 }
 
-.toggle-slider:after {
+.switch:after {
   content: "";
   position: absolute;
   background: rgb(255, 255, 255);
@@ -144,6 +144,14 @@ header p {
   transform: translateY(-50%);
   transition: 0.3s ease;
   user-select: none;
+}
+
+.activeSwitch {
+  background: rgb(122, 234, 223);
+}
+
+.activeSwitch:after {
+  transform: translate(145%, -50%);
 }
 
 .check {
@@ -290,9 +298,6 @@ header p {
   .switch:hover {
     background: rgb(122, 234, 223);
     cursor: pointer;
-  }
-  .switch input:checked + .toggle-slider:after {
-    transform: translate(150%, -50%);
   }
 
   .trialBtn {
