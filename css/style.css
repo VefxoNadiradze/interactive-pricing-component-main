@@ -73,7 +73,7 @@ header p {
   letter-spacing: -0.8px;
 }
 
-.monthSpan {
+.month-yearSpan {
   color: rgb(132, 142, 173);
   font-family: "Manrope", sans-serif;
   font-size: 14px;
@@ -82,7 +82,7 @@ header p {
 }
 
 .range {
-  order: 1;
+  position: relative;
   width: 100%;
   height: 8px;
   -webkit-appearance: none;
@@ -93,6 +93,16 @@ header p {
     hsl(224, 65%, 95%) 0%,
     hsl(224, 65%, 95%) 100%
   );
+}
+
+.range:after {
+  content: "";
+  height: 100%;
+  width: var(--progress-width);
+  position: absolute;
+  background-color: red;
+  left: 0;
+  top: 0;
 }
 
 .range::-webkit-slider-thumb {
@@ -113,6 +123,9 @@ header p {
   justify-content: space-around;
   max-width: 272px;
   margin: 40px auto 0 auto;
+  column-gap: 5px;
+  row-gap: 10px;
+  flex-wrap: wrap;
 }
 .monthlyBilingSpan {
   color: rgb(132, 142, 173);
@@ -152,12 +165,6 @@ header p {
 
 .activeSwitch:after {
   transform: translate(145%, -50%);
-}
-
-.check {
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
 }
 
 .yearly-precentOff {
@@ -265,7 +272,7 @@ header p {
     font-size: 40px;
   }
 
-  .monthSpan {
+  .month-yearSpan {
     font-size: 16px;
   }
 
